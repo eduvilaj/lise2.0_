@@ -68,7 +68,7 @@ function LireJson() {
       }
 
       document.getElementById('info').innerHTML = bb;
-      console.log(gg);
+      //console.log(gg);
     })
     .catch(err => console.error(err.message));
 }
