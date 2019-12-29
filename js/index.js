@@ -1,11 +1,13 @@
 var myPlayer = videojs('my-video');
 document.querySelector('#pdf_view').style.display = 'none';
 document.querySelector('#playvideo').style.display = 'none';
+document.querySelector('.info').style.display = 'none';
 
 function Afficher() {
   myPlayer.pause();
   document.querySelector('#pdf_view').style.display = 'block';
   document.querySelector('#playvideo').style.display = 'none';
+  document.querySelector('.info').style.display = 'none';
 
   let Niv_ = document.getElementById('Niveau');
   let Mat_ = document.getElementById('Matiere');
@@ -22,6 +24,7 @@ function VoirVideo() {
   myPlayer = videojs('my-video');
   document.querySelector('#pdf_view').style.display = 'none';
   document.querySelector('#playvideo').style.display = 'block';
+  document.querySelector('.info').style.display = 'none';
 
   let Niv_ = document.getElementById('Niveau');
   let Mat_ = document.getElementById('Matiere');
@@ -41,6 +44,14 @@ function VoirVideo() {
 }
 
 function LireJson() {
+  document.querySelector('#pdf_view').style.display = 'none';
+  document.querySelector('#playvideo').style.display = 'none';
+  let bb = `
+  <div class="alert alert-info alert-dismissible fade show">
+  <strong>Info!</strong> Cette Fonctionnalité est encours de developpement.
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+</div>
+  `;
   let gg = '';
   fetch('../data/database.json')
     .then(response => response.json())
@@ -56,7 +67,7 @@ function LireJson() {
         gg += `</ul>`;
       }
 
-      document.getElementById('info').innerHTML = gg;
+      document.getElementById('info').innerHTML = bb;
       console.log(gg);
     })
     .catch(err => console.error(err.message));
