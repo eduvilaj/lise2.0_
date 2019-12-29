@@ -41,27 +41,21 @@ function VoirVideo() {
 }
 
 function LireJson() {
-  let gg = ``;
+  let gg = '';
   fetch('../data/database.json')
     .then(response => response.json())
     .then(data => {
-      console.log(data);
-      if (data[0].lesons.length > 0) {
-        gg = `
-          <ul class="list-group">
-          `;
-        data[0].lesons.map(l => {
-          gg += `<li class="list-group-item">${l.t1}</li>`;
+      let gg = '';
+      console.log(data.lise2_0);
+      if (data.lise2_0[0].lesons.length > 0) {
+        let kk = data.lise2_0[0].lesons;
+        gg += `<ul class="list-group"> `;
+        kk.map(d => {
+          gg += `<li class="list-group-item">${d.t1}</li>`;
         });
         gg += `</ul>`;
       }
       document.getElementById('info').innerHTML = gg;
-      //console.log(data.lise_2['0'].pwogram);
-      // console.log(data.lise_2['0'].lyen_dokiman_pdf);
-      // let t = JSON.parse(data);
-      //  console.log("Salut");
-      // console.log(t);
-      // document.getElementById("info").innerHTML= JSON.stringify(data.lise_2['0']);
     })
-    .catch(error => console.error(error));
+    .catch(err => console.error(err.message));
 }
