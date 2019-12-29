@@ -41,10 +41,21 @@ function VoirVideo() {
 }
 
 function LireJson() {
+  let gg = ``;
   fetch('../data/database.json')
     .then(response => response.json())
     .then(data => {
       console.log(data);
+      if (data.length > 0) {
+        gg = `
+          <ul class="list-group">
+          `;
+        data.lesons.map(l => {
+          gg += `<li class="list-group-item">${l.t1}</li>`;
+        });
+        gg += `</ul>`;
+      }
+      document.getElementById('info').innerHTML = gg;
       //console.log(data.lise_2['0'].pwogram);
       // console.log(data.lise_2['0'].lyen_dokiman_pdf);
       // let t = JSON.parse(data);
