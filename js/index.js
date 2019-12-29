@@ -1,13 +1,13 @@
 var myPlayer = videojs('my-video');
 document.querySelector('#pdf_view').style.display = 'none';
 document.querySelector('#playvideo').style.display = 'none';
-document.querySelector('.info').style.display = 'none';
+//document.querySelector('.info').style.display = 'none';
 
 function Afficher() {
   myPlayer.pause();
   document.querySelector('#pdf_view').style.display = 'block';
   document.querySelector('#playvideo').style.display = 'none';
-  document.querySelector('.info').innerHTML = '';
+  //document.querySelector('.info').innerHTML = '';
 
   let Niv_ = document.getElementById('Niveau');
   let Mat_ = document.getElementById('Matiere');
@@ -24,7 +24,7 @@ function VoirVideo() {
   myPlayer = videojs('my-video');
   document.querySelector('#pdf_view').style.display = 'none';
   document.querySelector('#playvideo').style.display = 'block';
-  document.querySelector('.info').innerHTML = '';
+  //document.querySelector('.info').innerHTML = '';
 
   let Niv_ = document.getElementById('Niveau');
   let Mat_ = document.getElementById('Matiere');
