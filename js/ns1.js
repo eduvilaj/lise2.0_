@@ -10,5 +10,6 @@ function Afficher() {
   var ch_ = Niv_ + '_' + Mat_.value + '_' + Les_.value + '.pdf';
   //info_.innerHTML="Tu viens de selectionner le fichier :"+ch_;
   // alert("Tu viens de selectionner le fichier "+ch_);
+  console.log(ch_);
   PDFObject.embed('ressources/' + ch_, '#pdf_view');
 }
