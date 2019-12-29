@@ -46,11 +46,11 @@ function LireJson() {
     .then(response => response.json())
     .then(data => {
       console.log(data);
-      if (data.length > 0) {
+      if (data[0].lesons.length > 0) {
         gg = `
           <ul class="list-group">
           `;
-        data.lesons.map(l => {
+        data[0].lesons.map(l => {
           gg += `<li class="list-group-item">${l.t1}</li>`;
         });
         gg += `</ul>`;
