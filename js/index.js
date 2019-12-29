@@ -1,12 +1,13 @@
 var myPlayer = videojs('my-video');
 document.querySelector('#pdf_view').style.display = 'none';
 document.querySelector('#playvideo').style.display = 'none';
-//document.querySelector('.info').style.display = 'none';
+document.getElementById('.info').innerHTML = '';
 
 function Afficher() {
   myPlayer.pause();
   document.querySelector('#pdf_view').style.display = 'block';
   document.querySelector('#playvideo').style.display = 'none';
+  //document.getElementById('.info').innerHTML = '';
   //document.querySelector('.info').innerHTML = '';
 
   let Niv_ = document.getElementById('Niveau');
@@ -24,12 +25,13 @@ function VoirVideo() {
   myPlayer = videojs('my-video');
   document.querySelector('#pdf_view').style.display = 'none';
   document.querySelector('#playvideo').style.display = 'block';
+  //document.getElementById('.info').innerHTML = '';
   //document.querySelector('.info').innerHTML = '';
 
   let Niv_ = document.getElementById('Niveau');
   let Mat_ = document.getElementById('Matiere');
   let Les_ = document.getElementById('Lesson');
-  let info_ = document.getElementById('info');
+  //let info_ = document.getElementById('info');
 
   let ch = `ressources/videos/${Niv_.value}_${Mat_.value}_${Les_.value}.mp4`;
   // info_.innerHTML=`La video ${Mat_.value},Lessson ${Les_.value} est selecctionnee `;
@@ -46,13 +48,11 @@ function VoirVideo() {
 function LireJson() {
   document.querySelector('#pdf_view').style.display = 'none';
   document.querySelector('#playvideo').style.display = 'none';
-  let bb = `
-  <div class="alert alert-info alert-dismissible fade show">
+  alert('Cette Fonctionnalité est encours de developpement');
+
+  let bb = `<div class="alert alert-info">
   <strong>Info!</strong> Cette Fonctionnalité est encours de developpement.
-  <button type="button" class="close" data-dismiss="alert">&times;</button>
-</div>
-  `;
-  let gg = '';
+</div>`;
   fetch('../data/database.json')
     .then(response => response.json())
     .then(data => {
@@ -67,8 +67,7 @@ function LireJson() {
         gg += `</ul>`;
       }
 
-      document.getElementById('info').innerHTML = bb;
-      //console.log(gg);
+      // document.getElementById('info').innerHTML = bb;
     })
     .catch(err => console.error(err.message));
 }
