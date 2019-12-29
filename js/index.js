@@ -49,7 +49,7 @@ function LireJson() {
       console.log(data.lise2_0);
       if (data.lise2_0[0].lesons.length > 0) {
         let kk = data.lise2_0[0].lesons;
-        gg += `<ul class="list-group"> `;
+        gg += "<ul class='list-group'> ";
         kk.map(d => {
           gg += `<li class="list-group-item">${d.t1}</li>`;
         });
