@@ -55,7 +55,9 @@ function LireJson() {
         });
         gg += `</ul>`;
       }
+
       document.getElementById('info').innerHTML = gg;
+      console.log(gg);
     })
     .catch(err => console.error(err.message));
 }
