@@ -1,7 +1,7 @@
 var myPlayer = videojs('my-video');
 document.querySelector('#pdf_view').style.display = 'none';
 document.querySelector('#playvideo').style.display = 'none';
-document.getElementById('.info').innerHTML = '';
+//document.getElementById('.info').innerHTML = '';
 
 function Afficher() {
   myPlayer.pause();
