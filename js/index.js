@@ -69,7 +69,7 @@ function afficherLesson(lesson, i) {
   let aaa = '  ';
   let gg = "<ul class='list-group'> ";
   lesson.reponses.map(r => {
-    gg += `<li class="list-group-item possible_reponse" onclick="verifier_reponse('${lesson.Vrai_reponse}','${r.Lettre}');">${r.Lettre} -) ${r.possible_reponse} </li>`;
+    gg += `<li class="list-group-item"  onclick="verifier_reponse('${lesson.Vrai_reponse}','${r.Lettre}');">${r.Lettre} -) ${r.possible_reponse} </li>`;
   });
   gg += `</ul>`;
   m += gg;
